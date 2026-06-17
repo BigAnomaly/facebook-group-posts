@@ -1,74 +1,118 @@
-[Facebook Group Posts](https://apify.com/monumental_world/facebook-group-posts?fpr=data)
+[Facebook Group Posts](https://apify.com/data-slayer/facebook-group-posts?fpr=data)
 
-"# Facebook Group Posts Export to Excel (cookieless / no login needed)
+Extract Facebook group posts at scale without authentication or cookies. This scraper accesses publicly available group content through a cookieless architecture, eliminating the risk of account bans while delivering comprehensive post data, engagement metrics, and author profiles for competitive intelligence and community analysis.
 
-## Need to download Facebook group data to Excel? This tool helps you extract posts without logging in
+## 📺 Video Tutorial: How it Works
 
-If you're a social media community manager, agency owner, or business professional who needs to analyze Facebook group activity, this tool makes it simple. Export group posts directly to Excel or CSV—no technical skills, no Facebook login, and no complicated setup required. Perfect for tracking engagement trends, understanding content strategies, and gathering competitive intelligence from public Facebook groups.
-
-## Step-by-Step Guide
-
-**Step 1:** Find the Group ID from your Facebook group URL. It's the number in the web address when you visit the group.
-
-**Step 2:** Paste the Group ID into the tool and click ""Start."" No login or authentication needed—the tool works instantly.
-
-**Step 3:** Download your data as Excel, CSV, or XML. Open it in Microsoft Excel, Google Sheets, or any spreadsheet program you prefer.
-
-## What columns will I get?
-
-Your download will include the following columns:
-
-- **Group ID** - The unique identifier for the Facebook group
-- **Group Name** - The name of the Facebook group
-- **Group Member Count** - Total number of members in the group
-- **Post ID** - Unique identifier for each post
-- **Post Content** - The full text content of the post
-- **Post Author Name** - Name of the person who created the post
-- **Post Created Date** - When the post was published
-- **Post Engagement Count** - Total engagement (likes, reactions, etc.)
-- **Post Comment Count** - Number of comments on the post
-- **Post Share Count** - How many times the post was shared
-- **Post Type** - Type of post (event, photo, video, text, etc.)
-- **Post Attachment URL** - Link to any attached files or media
-
-## How to use this data
-
-**Analyze Engagement Trends:** Sort your spreadsheet by engagement count and created date to identify which types of posts perform best. Track patterns over time to understand what content resonates with your audience.
-
-**Competitive Intelligence:** Export posts from competitor groups to see what topics they're discussing, what content gets the most interaction, and how their community responds. Use these insights to improve your own content strategy.
-
-**Monthly Reporting:** Add the exported data to your client reports or internal dashboards. Filter by date range in Excel to show monthly performance metrics, top-performing posts, and community growth trends.
-
-## Input Settings
-
-**Group ID:** This is the unique number that identifies a Facebook group. You can find it in the group's URL when you visit the page on Facebook.
-
-For example, if the group URL is `facebook.com/groups/1439220986320043`, then your Group ID is `1439220986320043`.
-
-Simply copy this number and paste it into the tool to start extracting posts from that group.
-
-## Frequently Asked Questions
-
-**Q: Do I need a Facebook account to use this tool?**
-
-A: No! This tool works without any login or authentication. You don't need to connect your Facebook account or provide any credentials.
-
-**Q: Can I open this in Google Sheets?**
-
-A: Yes, absolutely! Just download the CSV file and upload it to Google Sheets. You can also open Excel files directly in Google Sheets by uploading them to Google Drive.
-
-**Q: How many posts can I export at once?**
-
-A: You can export as many posts as you need. The tool will gather all available posts from the group based on your settings.
-
-**Q: Will this work with private groups?**
-
-A: This tool works best with public groups where posts are visible without membership. Private group content may not be accessible without proper permissions.
-
-**Q: What format should I choose?**
-
-A: Excel (XLSX) is great for advanced analysis and formatting. CSV works everywhere and is perfect for Google Sheets. XML is useful if you're importing data into other software systems.
+[Video](https://www.youtube.com/embed/_hgn4f9N-tc?enablejsapi=1&rel=0)
 
 ---
 
-*Related tools: group posts scraper, social media group posts, facebook group posts scraper, export group posts, group post extraction, lead generation from group posts, collect group posts data*"
+## Key Features
+
+🔒 **Cookieless / No Login Required** - Access public Facebook group posts without authentication, cookies, or account credentials. Zero risk of account suspension or rate limiting.
+
+📈 **Scalable Architecture** - Extract thousands of group posts with detailed engagement metrics, reaction breakdowns, and author information in a single run.
+
+✅ **Rich Post Data** - Capture complete post content including messages, timestamps, media attachments (images/videos), reaction counts by type (like, love, wow, haha, sad, angry, care), comment counts, share counts, and full author profiles with profile pictures.
+
+⚡ **Fast & Reliable** - Optimized extraction engine delivers consistent results with automatic retry logic and error handling for uninterrupted data collection.
+
+📊 **Export-Ready Formats** - Download your data instantly in JSON, CSV, or Excel format, ready for analysis in your preferred business intelligence tools, CRM systems, or spreadsheet applications.
+
+## Use Cases
+
+**Social Media Managers**: Monitor multiple Facebook groups to track trending topics, content performance patterns, and community engagement levels. Identify high-performing post formats and optimal posting times to inform your content strategy.
+
+**Market Research Analysts**: Analyze audience sentiment and conversation themes across competitor groups or industry communities. Extract thousands of posts to identify emerging trends, pain points, and customer preferences for strategic planning.
+
+**Sales & Lead Generation Teams**: Discover potential customers actively discussing relevant topics in niche Facebook groups. Export posts with author profiles to build targeted outreach lists and identify warm leads expressing specific needs or interests.
+
+## Inputs
+
+| Field | Type | Description |
+| --- | --- | --- |
+| groupId | String | The unique Facebook Group ID (e.g., 1439220986320043). Find this in the group URL after `/groups/`. |
+
+## Outputs
+
+**Available Formats**: JSON, CSV, Excel
+
+**Key Data Fields**:
+
+- `post_id` - Unique identifier for each post
+- `url` - Direct link to the post
+- `message` - Full text content of the post
+- `timestamp` - Unix timestamp of when the post was created
+- `comments_count` - Total number of comments
+- `reactions_count` - Total reactions across all types
+- `reactions` - Breakdown by type (like, love, wow, haha, sad, angry, care)
+- `reshare_count` - Number of times the post was shared
+- `author.id` - Author's unique Facebook ID
+- `author.name` - Author's display name
+- `author.url` - Link to author's profile
+- `author.profile_picture_url` - Author's profile image URL
+- `image.uri` - URL of attached image (if present)
+- `image.height` / `image.width` - Image dimensions
+- `video` - Video attachment data (if present)
+- `external_url` - Any external links shared in the post
+
+## How to Use
+
+**Step 1**: Enter the target Facebook Group ID in the `groupId` field. You can find this numeric ID in the group's URL (e.g., facebook.com/groups/1439220986320043).
+
+**Step 2**: Configure any additional parameters such as date ranges or post limits based on your data collection needs.
+
+**Step 3**: Run the scraper and download your results in JSON, CSV, or Excel format. Data is available immediately upon completion.
+
+## Sample Output
+
+```
+{
+  "post_id": "4230362860539161",
+  "type": "post",
+  "url": "https://www.facebook.com/groups/boardgamecommunity/posts/4230362860539161/",
+  "message": "Looking for recommendations on strategy games for 2-4 players. Preferably something with medium complexity and under 90 minutes playtime.",
+  "timestamp": 1765705599,
+  "comments_count": 23,
+  "reactions_count": 15,
+  "reshare_count": 2,
+  "reactions": {
+    "angry": 0,
+    "care": 1,
+    "haha": 0,
+    "like": 12,
+    "love": 2,
+    "sad": 0,
+    "wow": 0
+  },
+  "author": {
+    "id": "pfbid0jTpnC5rAwPLzqpn8G2QbJgAi3u7qyXWyWfYuUokDiVukw2r5TtkfXu5QMrGDeA3Ll",
+    "name": "Sarah Mitchell",
+    "url": "https://www.facebook.com/sarah.mitchell.37",
+    "profile_picture_url": "https://scontent.flhe6-1.fna.fbcdn.net/v/t39.30808-1/profile_pic.jpg"
+  },
+  "image": null,
+  "video": null
+}
+```
+
+## 🧩 Other Facebook Actors by Data Slayer
+
+| Actor | What it does | Link |
+| --- | --- | --- |
+| Facebook Posts Scraper | Extract posts from any Facebook page | [Try it](https://apify.com/data-slayer/facebook-page-posts) |
+| Facebook Page Details Scraper | Get full page profiles — followers, contact info, ratings | [Try it](https://apify.com/data-slayer/facebook-page-details) |
+| Facebook Reviews Scraper | Extract customer reviews from any Facebook page | [Try it](https://apify.com/data-slayer/facebook-page-reviews) |
+| Facebook Page Search Scraper | Search and discover Facebook pages by keyword | [Try it](https://apify.com/data-slayer/facebook-search-pages) |
+| Facebook People Search Scraper | Search and find Facebook profiles by keyword | [Try it](https://apify.com/data-slayer/facebook-search-people) |
+| Facebook Events Scraper | Discover Facebook events by keyword search | [Try it](https://apify.com/data-slayer/facebook-search-events) |
+| Facebook Marketplace Listing Scraper | Extract detailed listing data from Facebook Marketplace | [Try it](https://apify.com/data-slayer/facebook-marketplace-details) |
+
+## 💬 Feedback and Support
+
+We actively maintain this actor and ship improvements based on user feedback. If you run into any issues or have ideas for new features:
+
+- Create an issue on the Actor's **Issues tab** in Apify Console
+- Rate the actor if it helped you — it helps others find it too
+We typically respond within 24 hours.
